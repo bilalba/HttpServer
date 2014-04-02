@@ -14,25 +14,29 @@ public class Serverthread implements Runnable {
 		t = new Thread(this);
 		t.start();
 	}
+
+	public void readReq(BufferedReader in) {
+		String h;
+		while (true) {
+			try{
+			  	if ((h = in.readLine()) != null) {
+	      			System.out.println("Print:" +h);
+	      			if (h.equals(""))
+	      				break;
+	      		}
+			} catch (Exception e) {
+				System.out.println("Request Timed out. 10 sec."); // check here if request has genuinely timed out or what.
+			}
+		}
+	}
 	public void run() {
 		try {
 			System.out.println("A connection has been made.");
-		String h;
+		
       	BufferedReader in = new BufferedReader(new InputStreamReader(df.getInputStream()));             
       	DataOutputStream out = new DataOutputStream(df.getOutputStream());
-      	while (true) {
-      		try{
-  		      	
-		      	if ((h = in.readLine()) != null) {
-		      		System.out.println(h); 
-		      		out.writeBytes("WTF\n");
-		      	}
-			} catch (Exception e) {
-				System.out.println("Request Timed out. 10 sec.");
-			}
-
-      }
-
+      	readReq(in);
+      	System.out.println("muchWOW");
 		} catch (Exception e) {
 			e.printStackTrace();
 			// out.writeBytes("badjob\n");
