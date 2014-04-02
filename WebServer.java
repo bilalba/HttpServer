@@ -6,6 +6,7 @@ public class WebServer {
 		ServerSocket welcomeSocket = new ServerSocket(8810);
 		while (true) {
       		Socket socks = welcomeSocket.accept();
+      		socks.setSoTimeout(10000);
       		Serverthread h = new Serverthread(socks);
       	}
 	}
