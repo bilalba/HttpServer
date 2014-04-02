@@ -1,0 +1,24 @@
+Types of request:
+
+Chrome: 
+
+GET / HTTP/1.1
+Host: localhost:8810
+Connection: keep-alive
+Cache-Control: max-age=0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.154 Safari/537.36
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: en-US,en;q=0.8
+Cookie: SESS1c1c760f249498eea7ea48581a878d0b=2Zi6qHo-Lvky_wtgzV2Gzs-2Dc9EksUAAsbFtWeJhbU
+
+
+Mozzila Firefox:
+
+GET /favicon.ico HTTP/1.1
+Host: localhost:8810
+User-Agent: Mozilla/5.0 (Windows NT 6.2; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
