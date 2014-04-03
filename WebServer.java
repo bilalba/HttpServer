@@ -3,7 +3,7 @@ import java.net.*;
 
 public class WebServer {
 	public static void main(String[] args) throws Exception {
-		ServerSocket welcomeSocket = new ServerSocket(8810);
+		ServerSocket welcomeSocket = new ServerSocket(80);
 		while (true) {
       		Socket socks = welcomeSocket.accept();
       		socks.setSoTimeout(10*1000); // timeout seconds.
