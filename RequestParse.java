@@ -6,10 +6,12 @@ public class RequestParse {
 	byte[] file;
 	String dir;
 	int length;
+	boolean ranged = false;
 	RequestParse(ArrayList<String> requests) {
 		String[] paths = requests.get(0).split(" ");
 		if (paths[0].equals("GET"))
 			r_path = paths[1];
+		// look for range here. to make it resume support
 		version = paths[2];
 		dir = System.getProperty("user.dir");
 		readfile();
